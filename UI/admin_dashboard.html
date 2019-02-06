@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Politico-Dashboard</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <ul>
+                    <li><h1 class="top">Politico-Dashboard</h1></li>
+                    <li class="nav-link"><a href="index.html">Log Out</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="body-container">
+            <div class="admin-dash">
+                <table class="admin-table">
+                    <tr>
+                        <td class="dash-left">
+                            <img src="images/dashboard_img.jpg" class="image"><br>
+                            <a href = "#" class="icon"><i class="fa fa-envelope" aria-hidden="true"> Mailbox</i></a><br>
+                            <a href = "#" class="icon"><i class="fa fa-cog" aria-hidden="true"> Settings</i></a><br>
+                            <a href = "#" class="icon"><i class="fa fa-sitemap" aria-hidden="true"> Sitemap</i></a><br>
+                            <a href = "#" class="icon"><i class="fa fa-desktop" aria-hidden="true"> UI Features</i></a><br>
+                            <a href = "#" class="icon"><i class="fa fa-user-circle-o" aria-hidden="true"> Users</i></a><br>
+                            <a href = "#" class="icon"><i class="fa fa-database" aria-hidden="true"> Database</i></a><br>
+                            <a href = "#" class="icon"><i class="fa fa-cloud" aria-hidden="true"> Cloud</i></a><br>
+                            <a href = "#" class="icon"><i class="fa fa-line-chart" aria-hidden="true"> Site Stats</i></a><br>
+                        </td>
+                        
+                        <td class="dash-right" colspan="3">
+                            <table class= "parties">
+                                <tr>
+                                    <th class="heading" colspan="3">Political Parties</th>
+                                </tr>
+                                <tr>
+                                    <td><a href="create_party.html"><button type="button" class="create-party">Create</button></a></td>
+                                    <td><a href="edit_party.html"><button type="button" class="edit-party">Edit</button></a></td>
+                                    <td><a href="delete_party.html"><button type="button" class="delete-party">Delete</button></a></td>
+                                </tr>      
+                            </table>
+                        </td>
+                        <td class="dash-right" colspan="3">
+                            <table class= "parties">
+                                <tr>
+                                    <th class="heading" colspan="3">Government Offices</th>
+                                </tr>
+                                <tr>
+                                    <td><a href="create_office.html"><button type="button" class="create-party">Create</button></a></td>
+                                    <td><a href="#"><button type="button" class="edit-party">Edit</button></a></td>
+                                    <td><a href="#"><button type="button" class="delete-party">Delete</button></a></td>
+                                </tr>      
+                            </table>
+                        </td>
+                    </tr>              
+                </table>   
+            </div>
+            <footer>
+                <p>Copyright Politico 2019</p>
+                <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+                <i class="fa fa-linkedin" aria-hidden="true"></i> 
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>

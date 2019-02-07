@@ -1,0 +1,456 @@
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+nav{
+    background-color:#66d9ff;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin:0;
+}
+/*Create a horizontal list with spacing*/
+nav ul li {
+    display:inline-block;
+    margin-left: 2px;
+    padding-left: 5px;
+}
+
+nav ul li a {
+    display:inline-block;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+}
+
+.nav-link {
+    float: right;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.nav-link:hover{
+    background-color: #b1abab;
+}
+.drop .btn {
+    font-weight: bold;
+    font-size: 16px;  
+    border: none;
+    color: white;
+    outline: none;
+    padding: 10px 16px;
+    background-color: inherit;
+  }
+
+.drop-links {
+    display: none;
+    position: absolute;
+    background-color: #b1abab;
+  }
+  
+.drop-links a {
+    color: white;
+    padding: 18px 18px;
+    display: block;
+    text-align: left;
+  }
+.drop-links a:hover {
+    background-color:#66d9ff;
+  }
+  
+.drop:hover .drop-links {
+    display: block;
+  }
+  
+.top {
+    float: left;
+    margin-top: 15px;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+}
+
+.intro {
+    margin-top: 50px;
+    max-width:45%;
+    text-align: left;
+    line-height: 45px;
+    font-size: 35px;
+    float: left;
+}
+
+.home-image img{
+    width: 52%;
+    height: 55%;
+    float: right;
+}
+
+.login,
+.create-account,
+.homeButton {
+    background-color: #66d9ff;
+    color: white;
+    padding: 15px 10px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    width: 80%;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.homeButton:hover{
+    background-color: #b1abab;
+}
+
+.reset-form,
+.sign-in,
+.sign-up {
+    text-align: center;
+}
+
+
+input[type=text],
+input[type=password],
+input[type=value] {
+    width: 35%;
+    padding: 15px 10px;
+    margin: 10px auto;
+    box-sizing: border-box;
+    background-color: #f2f2f2;
+    border-radius: 5%
+}
+
+input[type=text]:focus,
+input[type=password]:focus,
+input[type=value]:focus {
+    background-color: #ccffff
+}
+
+.login {
+    width: 15%;
+}
+.create-account {
+    width: 35%;
+}
+
+.login:hover{
+    background-color: #b1abab;
+}
+
+.create-account:hover{
+    background-color: #b1abab;
+}
+
+.heading{
+    color: #66d9ff;
+}
+
+.reset-form,
+.sign-in{
+    margin-top: 5%;
+}
+
+.pwd-reset {
+    margin-top: 50px;
+    line-height: 2.8em;
+}
+
+.reset-btns {margin-top: 20px;}
+
+.reset-next {
+    background-color: #66d9ff;
+    color: white;
+    padding: 12px 10px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 5px;
+    font-size: 20px;
+    width: 11%;
+    text-decoration: none;
+}
+
+.reset-cancel {
+    background-color: #ff3333;
+    color: white;
+    padding: 12px 10px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 5px;
+    font-size: 20px;
+    width: 11%;
+    text-decoration: none;
+}
+.reset-next:hover{
+    background-color: #b1abab;
+}
+.reset-cancel:hover{
+    background-color: #cc0000;
+}
+
+.reset-form {
+    margin-top: 50px;
+}
+
+.admin-message {
+    color: red;
+    font-size: 15px;
+    text-align: center;
+}
+.dash-left {
+    width: 350px;
+    float: left;
+    line-height: 2.4em;
+    margin-left: 0;
+}
+
+.dash-right {
+    width: 580px;
+    float: left;
+    line-height: 2.4em;
+}
+.dash-right h2 {
+    text-align: center;
+}
+
+.image {
+    height: 90px;
+    width: 90px;
+    margin: 0px 10px 10px 0px;
+    border-radius: 50%;
+}
+
+.icon {
+    color:  #0086b3;
+}
+
+.icon:hover{
+    color: #66d9ff;
+}
+.admin-dash {
+    margin-top: 20px;
+}
+
+.del-party,
+.parties tr td button {
+    border: none;
+    display: inline-block;
+    font-size: 20px;
+    width: 150px;
+    padding: 18px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    color: white;
+}
+.parties th {
+    font-size: 18pt;
+    padding: 14px;
+}
+
+.create-party,
+.edit-party {
+    background-color: #66d9ff;
+    margin-top: 0;
+}
+
+.delete-party,
+.del-party {
+    background-color: #ff3333;
+}
+
+.create-party:hover {
+    background-color: #b1abab;
+}
+
+.edit-party:hover {
+    background-color:#b1abab;
+}
+
+.delete-party:hover {
+    background-color:#b1abab;
+}
+
+.del-party:hover {
+    background-color:#b1abab;
+}
+
+.parties tr td {
+    padding-left: 20px;    
+}
+
+.create-brief {
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 2%;
+}
+
+.del-parties {
+    margin-top:2%;
+}
+
+.all-offices,
+.all-parties{
+    border-collapse: collapse;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.all-parties tr:nth-child(even){background-color: #66d9ff;}
+
+.all-offices tr:hover {background-color: #b1abab;}
+.all-parties tr:hover {background-color: #b1abab;}
+
+.all-offices tr th {
+    height: 30px;
+    border-bottom: 1px solid #f2f2f2;
+    text-align: left;
+}
+.all-parties tr th {
+    height: 30px;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.all-offices tr td {
+    height: 20px;
+    padding: 15px;
+    border-bottom: 1px solid #b1abab;
+    width:120px;
+    text-align: left;
+}
+.all-parties tr td {
+    height: 20px;
+    padding: 15px;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.offices,
+.parties {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.cand-image{
+    height: 150px;
+    width: 150px;
+    margin: 0px 10px 10px 0px;
+    border-radius: 3%;
+}
+
+.candidates {
+    margin-left: 180px;
+    margin-right: 50px;
+    margin-top: 20px;
+}
+
+.candidates a{
+    text-decoration: none;
+    color: #0086b3;
+}
+
+.candidates a:hover{
+    text-decoration: underline;
+}
+
+figure {
+    margin-left: 50px;
+    margin-right: 50px;
+    float: left;
+}
+
+.success {
+    margin-top:150px;
+    text-align: center;
+}
+.success a{
+    text-decoration: none;
+    color: black;
+}
+
+.success a:hover{
+    color: #0086b3;
+}
+
+.profile{
+    width: 100%;
+}
+
+.user-details{
+    width: 21%;
+    float: left;
+    margin-top:0;
+}
+
+.vote-details{
+    width: 75%;
+    float: right;
+    margin-top:0;
+    float:top;
+    
+}
+.vote-details table {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.vote-details, table, tr,th{
+    text-align: center;
+    height: 30px;
+
+}
+.details-container {
+    background-color: #c4c2c2;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.profile-btns button {
+    padding: 12px 16px;
+    width: 100%;
+    background-color:#66d9ff;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+
+}
+
+.profile-btns button:hover{
+    background-color: #b1abab;
+}
+
+footer {
+    position:relative;
+    margin-bottom: 30px;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+.container{
+    min-height: 100%;
+    width: 100%;
+    margin-bottom: 30px;
+}
+.body-container{
+    line-height: 25px;
+    margin: 10px auto;
+    width: 90%;
+    height: 100%;
+}
+
+.body-container .admin-dash{
+    line-height: 25px;
+    width: 90%;
+    height: 100%;
+}
+
+.the-foot {
+    margin-top: 60px;
+    text-align: center;
+    float: none;
+}

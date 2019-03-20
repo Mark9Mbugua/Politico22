@@ -108,3 +108,54 @@ function showLoggy(){
         displayError('Kindly check your connection');
      });
 }
+
+function onSignup() {
+    loader =  document.getElementById('load-modal');
+    //loader.style.display = 'block';
+
+    let payload = {
+        firstname: document.getElementById('firstname').value,
+        lastname: document.getElementById('lastname').value,
+        username: document.getElementById('username').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        password: document.getElementById('password').value,
+
+    }
+
+    fetch (`${BASE_URL}/auth/signup`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',           
+        },
+        body: JSON.stringify(payload),
+    })
+    .then(res => res.json())
+    .then((data) => {
+        //loader.style.display = 'none';
+
+        console.log(data.data);
+        if(data.status === 201){
+            var user = data.data;
+
+            // Save user profile to local storage
+            localStorage.setItem('firstname', user.firstname);
+            localStorage.setItem('lastname', user.lastname);
+            localStorage.setItem('username', user.username);
+            localStorage.setItem('email', user.email);
+            localStorage.setItem('phone', user.phone);
+            localStorage.setItem('admin', user.is_admin);
+            localStorage.setItem('user_id', user.user_id);
+
+            //Redirect to homepage after successful login
+            window.location.replace('user_profile.html');
+        }else {
+            displayError(data.error)
+            console.log(data.status);
+        }
+    })
+    .catch((error) => {
+        //loader.style.display = 'none';
+        displayError('Kindly check your connection')
+    });
+}

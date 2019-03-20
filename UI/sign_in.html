@@ -12,13 +12,14 @@
     <body>
         <div class="container">
             <div class="sign-in">
-                <form action="#" method="GET">
+                <form onsubmit="onLogin(); return false;">
+                    <h6 id="login-alert" class="error-message"></h6>
                     <h1 class="heading"><span class="title">Politico</span></h1>
                     <h2>Sign In</h2><br>
                     <img src="images/login_icon.png" alt="login icon"><br>
-                    <input type="text" placeholder="Enter Email Address" required><br>
+                    <input type="text" placeholder="Enter Username" id="login-username" required><br>
 
-                    <input type="password" placeholder="Enter Password" required><br>
+                    <input type="password" placeholder="Enter Password" id="login-password" required><br>
                     
                     <label><input type="checkbox" checked="checked">Remember me</label>
 
@@ -26,7 +27,7 @@
                         <a href="user_profile.html"><button type="submit" class="login" id="login">Sign In</button></a>
                     </div>
                     <br>
-                    <a href="reset_pwd.html">Reset Password</a>
+                    <a href="reset_pwd.html">Forgot Password?</a>
                     <br>
                     <p>Don't have an account?<a href="sign_up.html">Sign Up</a></p>
                     <br>
@@ -40,5 +41,7 @@
                 <i class="fa fa-linkedin" aria-hidden="true"></i> 
             </footer>
         </div>
+        <script src="scripts/app.js"></script>
+        <p id="loggy"></p>
     </body>
 </html>

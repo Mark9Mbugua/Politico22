@@ -196,7 +196,9 @@ function loadOffices(){
                     <span class="office-id">Office Id: ${office.office_id}</span><br>
                     <span class="office-type">Office Type: ${office.office_type}</span><br>
                     <span class="office-name">Office Name: ${office.office_name}</span><br>
-                    <span class="location">Of: ${office.location}</span><br>
+                    <span class="location">Of: ${office.location}</span>
+                    <br>
+                    <br>
                 `
                 offices.appendChild(office_node);
             });
@@ -225,7 +227,9 @@ function loadParties(){
                     <span class="party-id">Party Id: ${party.party_id}</span><br>
                     <span class="party-name">Party Name: ${party.party_name}</span><br>
                     <span class="hq-address">Headquarters: ${party.hqaddress}</span><br>
-                    <span class="logo-url">Logo URL: <a href=#>${party.logourl}</a></span><br>
+                    <span class="logo-url">Logo URL: <a href=#>${party.logourl}</a></span>
+                    <br>
+                    <br>
                 `
                 parties.appendChild(party_node);
             });

@@ -170,6 +170,40 @@ function loadUserProfile(){
     initAdmin(); 
 }
 
+function on_logout(){
+    localStorage.clear();
+    window.location.replace('index.html')
+}
+
+function loadOffices(){
+    fetch (`${BASE_URL}/offices`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    })
+    .then(res => res.json())
+    .then((data) => {
+
+        if (data.status === 200){
+            offices = document.getElementById('office-list');
+            
+            console.log(data.status);
+            data.data.forEach(function(office){
+                let office_node = createNode('div', office.office_id, 'office');
+                office_node.innerHTML = `
+                <div class = "office-details">
+                    <span class="office-type">Office Id: ${office.office_id}</span><br>
+                    <span class="office-type">Office Type: ${office.office_type}</span><br>
+                    <span class="office-name">Office Name: ${office.office_name}</span><br>
+                    <span class="location">Of: ${office.location}</span><br>
+                `
+                offices.appendChild(office_node);
+            });
+        }
+    });
+}
+
 function initAdmin(){
     isAdmin = localStorage.getItem('admin');
     if(isAdmin == false){
@@ -178,9 +212,3 @@ function initAdmin(){
         return true;
     }
 }
-
-function on_logout(){
-    localStorage.clear();
-    window.location.replace('signup.html')
-}
-

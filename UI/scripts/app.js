@@ -249,6 +249,49 @@ function loadOffices(){
     });
 }
 
+function createParty() {
+    loader =  document.getElementById('load-modal');
+    //loader.style.display = 'block';
+
+    let payload = {
+        party_name: document.getElementById('name').value,
+        hqAddress: document.getElementById('hqAddress').value,
+        logoUrl: document.getElementById('logoUrl').value
+
+    }
+
+    fetch (`${BASE_URL}/parties`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'authorization': `Bearer ${getToken()}`           
+        },
+        body: JSON.stringify(payload),
+    })
+    .then(res => res.json())
+    .then((data) => {
+        //loader.style.display = 'none';
+
+        console.log(data);
+        if(data.status === 201){
+
+            displaySuccess('Party created successfuly');
+
+            setTimeout(function(){
+                window.location.replace('parties.html')
+           }, 2000);
+
+        }else {
+            displayError(data.error);
+            console.log(data.status);
+        }
+    })
+    .catch((error) => {
+        //loader.style.display = 'none';
+        displayError('Kindly check your connection')
+    });
+}
+
 function loadParties(){
     fetch (`${BASE_URL}/parties`, {
         method: 'GET',
@@ -279,6 +322,8 @@ function loadParties(){
         }
     });
 }
+
+
 
 function initAdmin(){
     isAdmin = localStorage.getItem('admin');

@@ -193,12 +193,45 @@ function loadOffices(){
                 let office_node = createNode('div', office.office_id, 'office');
                 office_node.innerHTML = `
                 <div class = "office-details">
-                    <span class="office-type">Office Id: ${office.office_id}</span><br>
+                    <span class="office-id">Office Id: ${office.office_id}</span><br>
                     <span class="office-type">Office Type: ${office.office_type}</span><br>
                     <span class="office-name">Office Name: ${office.office_name}</span><br>
-                    <span class="location">Of: ${office.location}</span><br>
+                    <span class="location">Of: ${office.location}</span>
+                    <br>
+                    <br>
                 `
                 offices.appendChild(office_node);
+            });
+        }
+    });
+}
+
+function loadParties(){
+    fetch (`${BASE_URL}/parties`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    })
+    .then(res => res.json())
+    .then((data) => {
+
+        if (data.status === 200){
+            parties = document.getElementById('party-list');
+            
+            console.log(data.status);
+            data.data.forEach(function(party){
+                let party_node = createNode('div', party.party_id, 'party');
+                party_node.innerHTML = `
+                <div class = "party-details">
+                    <span class="party-id">Party Id: ${party.party_id}</span><br>
+                    <span class="party-name">Party Name: ${party.party_name}</span><br>
+                    <span class="hq-address">Headquarters: ${party.hqaddress}</span><br>
+                    <span class="logo-url">Logo URL: <a href=#>${party.logourl}</a></span>
+                    <br>
+                    <br>
+                `
+                parties.appendChild(party_node);
             });
         }
     });

@@ -139,6 +139,7 @@ function onSignup() {
             var user = data.data;
 
             // Save user profile to local storage
+            localStorage.setItem('token', data.token);
             localStorage.setItem('firstname', user.firstname);
             localStorage.setItem('lastname', user.lastname);
             localStorage.setItem('username', user.username);
@@ -159,3 +160,27 @@ function onSignup() {
         displayError('Kindly check your connection')
     });
 }
+
+function loadUserProfile(){
+    fname = localStorage.getItem('firstname');
+    lname = localStorage.getItem('lastname');
+    document.getElementById('bothnames').innerText = `${fname} ${lname}`
+    document.getElementById('email').innerText = localStorage.getItem('email');
+    document.getElementById('phone').innerText = localStorage.getItem('phone');
+    initAdmin(); 
+}
+
+function initAdmin(){
+    isAdmin = localStorage.getItem('admin');
+    if(isAdmin == false){
+        return false;
+    }else{
+        return true;
+    }
+}
+
+function on_logout(){
+    localStorage.clear();
+    window.location.replace('signup.html')
+}
+

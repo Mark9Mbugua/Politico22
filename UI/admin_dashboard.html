@@ -7,15 +7,19 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="scripts/app.js"></script>
 </head>
 
 <body>
+    <script>
+        var token = getToken();
+    </script>
     <div class="container">
         <header>
             <nav>
                 <ul>
                     <li><h1 class="top">Politico-Dashboard</h1></li>
-                    <li class="nav-link"><a href="index.html">Log Out</a></li>
+                    <li class="nav-link"><a href="index.html" id="logout" onclick="on_logout();">Log Out</a></li>
                 </ul>
             </nav>
         </header>
@@ -25,6 +29,15 @@
                     <tr>
                         <td class="dash-left">
                             <img src="images/dashboard_img.jpg" class="image"><br>
+                            <div class="details-container">
+                                <span class="profile-name" id="bothnames">User's Names</span><br>
+                                <span class="profile-email" id="email">mbuguamark@gmail.com</span><br>
+                                <span class="profile-logged" id="phone">Since March 2018</span><br>
+                                <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                                <i class="fa fa-twitter" aria-hidden="true"></i>
+                                <i class="fa fa-instagram" aria-hidden="true"></i>
+                                <i class="fa fa-linkedin" aria-hidden="true"></i>
+                            </div>
                             <a href = "#" class="icon"><i class="fa fa-envelope" aria-hidden="true"> Mailbox</i></a><br>
                             <a href = "#" class="icon"><i class="fa fa-cog" aria-hidden="true"> Settings</i></a><br>
                             <a href = "#" class="icon"><i class="fa fa-sitemap" aria-hidden="true"> Sitemap</i></a><br>
@@ -70,7 +83,12 @@
                 <i class="fa fa-linkedin" aria-hidden="true"></i> 
             </footer>
         </div>
-    </div>
+        <script>
+            loadUserProfile();        
+        </script> 
+        <p id="loggy"></p>
+    </div> 
+    
 </body>
 
 </html>

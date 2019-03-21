@@ -5,15 +5,19 @@
         <link rel="stylesheet" type="text/css" href="style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="scripts/app.js"></script>
     </head>
 
     <body>
+        <script>
+            var token = getToken();
+        </script>
         <div class="container">
             <header>
                 <nav>
                     <ul>
                         <li><h1 class="top">Politico</h1></li>
-                        <li class="nav-link"><a href="index.html">Log Out</a></li>
+                        <li class="nav-link"><a href="index.html" id="logout" onclick="on_logout();">Log Out</a></li>
                         <li class="nav-link"><a href="vote_candidates.html">Vote Now</a></li>
                         <li class="nav-link"><a href="parties.html">Parties</a></li>
                         <li class="nav-link">
@@ -36,12 +40,9 @@
                     <div class="user-details">
                         <div class="details-container">
                             <img src="images/dashboard_img.jpg" class="image"><br>
-                            <p><b>Name</b>: Mark Mbugua</p>
-                            <p><b>Phone Number:</b> +25412345678</p>
-                            <p><b>National ID Number:</b> 300642858</p>
-                            <p><b>Voter's card number:</b> 106106</p>
-                            <p><b>County of registration:</b> Kiambu</p>
-                            <p><b>Constituency:</b> Kiambaa</p>
+                            <span class="profile-name" id="bothnames">User's Names</span><br>
+                            <span class="profile-email" id="email">gafogua@gmail.com</span><br>
+                            <span class="profile-logged" id="phone">Since March 2018</span><br>
                             <i class="fa fa-facebook-official" aria-hidden="true"></i>
                             <i class="fa fa-twitter" aria-hidden="true"></i>
                             <i class="fa fa-instagram" aria-hidden="true"></i>
@@ -136,7 +137,11 @@
                 <i class="fa fa-instagram" aria-hidden="true"></i>
                 <i class="fa fa-linkedin" aria-hidden="true"></i> 
             </footer>
-        </div> 
+            <script>
+                loadUserProfile();        
+            </script> 
+            <p id="loggy"></p>
+        </div>
     </body>
     
 </html>

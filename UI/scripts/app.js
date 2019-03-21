@@ -175,6 +175,49 @@ function on_logout(){
     window.location.replace('index.html')
 }
 
+function createOffice() {
+    loader =  document.getElementById('load-modal');
+    //loader.style.display = 'block';
+
+    let payload = {
+        office_type: document.getElementById('type').value,
+        office_name: document.getElementById('name').value,
+        location: document.getElementById('loc').value
+
+    }
+
+    fetch (`${BASE_URL}/offices`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'authorization': `Bearer ${getToken()}`           
+        },
+        body: JSON.stringify(payload),
+    })
+    .then(res => res.json())
+    .then((data) => {
+        //loader.style.display = 'none';
+
+        console.log(data);
+        if(data.status === 201){
+
+            displaySuccess('Office created successfuly');
+
+            setTimeout(function(){
+                window.location.replace('offices.html')
+           }, 2000);
+
+        }else {
+            displayError(data.error);
+            console.log(data.status);
+        }
+    })
+    .catch((error) => {
+        //loader.style.display = 'none';
+        displayError('Kindly check your connection')
+    });
+}
+
 function loadOffices(){
     fetch (`${BASE_URL}/offices`, {
         method: 'GET',
